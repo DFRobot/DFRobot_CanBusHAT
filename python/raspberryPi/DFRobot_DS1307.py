@@ -103,7 +103,6 @@ class DFRobot_DS1307(object):
       @param bus I2C bus
     '''
     self._ds1307_addr = ds1307_addr
-    self._eeprom_addr = EEPROM_I2C_ADDR
     self._i2c = smbus.SMBus(bus)
     self._rtc_mask = [ DS1307_SEC_MASK, DS1307_MIN_MASK, DS1307_HR_MASK, 
     DS1307_DOW_MASK, DS1307_DATE_MASK, DS1307_MTH_MASK, DS1307_YR_MASK ]
