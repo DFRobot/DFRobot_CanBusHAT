@@ -197,7 +197,7 @@ class DFRobot_DS1307(object):
       type_time -= DS1307_BASE_YR
     self._rtc_BCD[type] = (self._rtc_BCD[type] & (~self._rtc_mask[type])) | (self._bin_to_bcd(type_time & self._rtc_mask[type]))
     self._write_reg(type, self._rtc_BCD[type])
-
+  @property
   def start(self):
     '''!
       @brief Start RTC timer function
@@ -205,7 +205,7 @@ class DFRobot_DS1307(object):
     '''
     self._rtc_BCD[self.e_SEC] &= ~DS1307_CLOCKHALT
     self._write_reg(DS1307_SEC_REG, self._rtc_BCD[self.e_SEC])
-
+  @property
   def stop(self):
     '''!
       @brief Stop RTC timer function
