@@ -13,7 +13,7 @@
 import can
 import time  
   
-can1 = can.interface.Bus(channel = 'can0',bustype = 'socketcan_ctypes')
+can1 = can.interface.Bus(channel = 'can0',bustype = 'socketcan')
 
 msg = can1.recv(10.0)
 print(msg)
