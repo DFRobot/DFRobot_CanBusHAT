@@ -13,8 +13,8 @@
 import time
 import can
 
-can0 = can.interface.Bus(channel = 'can1', bustype = 'socketcan_ctypes')
+can0 = can.interface.Bus(channel = 'can1', bustype = 'socketcan')
 
-msg = can.Message(arbitration_id=0x22, data=[0,1,2,3,4,5,6,7], extended_id=True)
+msg = can.Message(arbitration_id=0x22, data=[0,1,2,3,4,5,6,7], is_extended_id=True)
 
 can0.send(msg)
